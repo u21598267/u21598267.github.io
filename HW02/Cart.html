@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <script src="movies.js"></script>
+    <script src="cart.js"></script>
+    <script src="https://kit.fontawesome.com/34cd63a9a0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body onload="insertMovies()">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark " >
+    <a class="navbar-brand" href="#" >Yuphie Movies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="Home.html">Home <i class="fa-solid fa-clapperboard" style="margin-left: 10px"></i> <span class="sr-only">(current)</span></a>
+                <span > </span>
+            </li>
+
+        </ul>
+        <form  class="form-inline my-2 my-lg-0" style="height: 50px;width: 30px">
+            <i class="fa-solid fa-cart-plus"  onclick="window.location.href='#'"></i></a>
+            <span id="ticketCount"></span>
+        </form>
+    </div>
+</nav>
+<!-- END of Navigation Bar-->
+
+<h6 style="font-size: 30pt">Cart</h6>
+<!--Table-->
+<table class="table" id="myTable">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Movie</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Cost</th>
+    </tr>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+</table>
+
+</table>
+<!--Table-->
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
