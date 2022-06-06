@@ -9,25 +9,30 @@ namespace u21598267_HW03.Controllers
 {
     public class HomeController : Controller
     {
+        
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Title = "Index Page";
+            ViewBag.Title = "Index";
             ViewBag.SubTitle = "Jonel Albuquerque";
             ViewBag.Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+            
+            
             return View();
         }
+       
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase file)
+        
+        public ActionResult Index(HttpPostedFileBase file,string Answer)
         {
 
             if (file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/App_Data"), fileName);
+                var path = Path.Combine(Server.MapPath("~/Media"), fileName);
                 file.SaveAs(path);
             }
-
+            
             return RedirectToAction("Index");
         }
   

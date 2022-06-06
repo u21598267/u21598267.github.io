@@ -9,23 +9,27 @@
         <p>@ViewBag.Description</p>
 
     </div>
-    <div style="float:left;margin-left: 30px">
-        <h2>Option Selection</h2>
-        <label for="document">Document</label>
-        <input type="radio" id="document" value="Document"><br>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div style="float:left;margin-left: 30px">
+            <h2>Option Selection</h2>
+            <!-- <label for="document">Document</label>
+    <input type="radio" id="document" value="Document"><br>
 
-        <label for="image">Image</label>
-        <input type="radio" id="image" value="Image"><br>
+    <label for="image">Image</label>
+    <input type="radio" id="image" value="Image"><br>
 
-        <label for="video">Video</label>
-        <input type="radio" id="video" value="Video"><br>
+    <label for="video">Video</label>
+    <input type="radio" id="video" value="Video"><br>-->
+            <label for="file">Filename:</label>
+            <input type="file" name="file" id="file" />
 
-                                                     <form action="" method="post" enctype="multipart/form-data">
+            @using (Html.BeginForm("Index", "Home"))
+            {
+                @Html.RadioButton("Answer", "A")<span>A</span>
+                @Html.RadioButton("Answer", "B")<span>B</span>
 
-                                                         <label for="file">Filename:</label>
-                                                         <input type="file" name="file" id="file" />
-
-                                                         <input type="submit" />
-                                                     </form>
+                <input type="submit" />
+            }
+</form>
     </div>
 </div>
