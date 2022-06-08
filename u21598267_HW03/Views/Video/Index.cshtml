@@ -1,0 +1,66 @@
+﻿@using u21598267_HW03.Models;
+@using System;
+@using System.IO;
+@using System.Text;
+@using System.Collections.Generic;
+@using System.Web.Mvc;
+@using u21598267_HW03.Models
+@model  List<FileModel>
+
+@{
+    ViewBag.Title = "Video Viewer";
+    ViewBag.SubTitle = "Homework Assignment 3";
+}
+<head>
+    <h2><strong>@ViewBag.Title</strong></h2>
+    <h4><strong>@ViewBag.SubTitle</strong></h4>
+    <style type="text/css">
+        .auto-style {
+            color: #FFFFFF;
+        }
+
+        .t {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+
+
+<div class="container">
+    <div class="row">
+
+        @{ var counter = 0; }
+        @foreach (FileModel file in Model)
+        {
+            string path = "~/Content/Media/videos/" + @file.FileName;
+
+            <div @(counter != 4 ? String.Empty : "class=\"w-100\"") />
+            <div @(counter == 4 ? counter = 1 : counter = counter) />
+
+            <div class="col-sm-4" style="padding-bottom:20px;">
+                <video width="320" height="240" autoplay muted>
+                    <source src="@Url.Content(path)" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> <br />
+                <h5><strong>@file.FileName</strong></h5>
+                <button class="btn btn-success">
+                    @Html.ActionLink("Download", "DownloadFile",
+                     new { fileName = file.FileName })
+                </button>
+                <button class="btn btn-danger">
+                    @Html.ActionLink("DELETE", "DeleteFile",
+                   new { fileName = file.FileName },
+                   new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                </button>
+            </div>    
+            }
+    </div>
+    </div>
+<style>
+    table {
+        border-bottom: 2px grey solid;
+        width: fit-content;
+    }
+</style>

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index Home Page";
+    ViewBag.SubTitle = "Homework Assignment 3";
+}
+
+<h1>Welcome to the @ViewBag.Title</h1>
+<h2>This is for @ViewBag.SubTitle</h2>
+
+<section id="description">
+   
+    <div style="float: left; width: 60%; display: inline-block">
+        <article>
+            <h3><strong>Description</strong></h3>
+            Homework assignemnt three builds on the knowledge gainded from previosu lectures of MVCs.
+            A description from <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/mvc">this website</a> describes MVCs as MVC is a design pattern used to decouple user-interface (view), data (model),
+            and application logic (controller). This pattern helps to achieve separation of concerns.
+            In this assignment we will be designing a MVC that allows users to uplaod files. With this we will then store these files in the correct folders
+            based on the users input. This will easily allow the user to delete/downlaod the files that are uplaoded.
+        </article>
+    </div>
+       
+            <h3><strong>Option Selection:</strong></h3>
+          
+
+                <div class="well-sm">
+                    <div class="form-horizontal">
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+
+                        {
+                            <label for="document">Document</label>
+                            <input type="radio" id="document" value="Document"><br>
+
+                            <label for="image">Image</label>
+                            <input type="radio" id="image" value="Image"><br>
+
+                            <label for="video">Video</label>
+                            <input type="radio" id="video" value="Video" name="Videos"><br>
+
+                            <div><input type="file" name="files" /></div>
+                            <br />
+                            <div><input type="submit" value="Upload" /></div>
+                        }
+                    </div>
+                    <br />
+                </div>
+        
+    
+</section>
+
+<style>
+    #description {
+        background: linear-gradient(lightgrey,darkgrey);
+        height: 230px;
+      
+    }
+  
+</style>
+
