@@ -33,8 +33,10 @@
         </nav>
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/Profile.jpg" alt="">
-                <!-- Masthead Heading-->
+                <!-- Masthead Avatar Image--><img style="border-radius: 50%;" class="masthead-avatar mb-5" src="assets/img/Profile.jpg" alt="">
+                <!-- Masthead Heading--><figcaption id="location"></figcaption>
+                                         <figcaption id="Temperature"></figcaption>
+                                         <figcaption id="Localtime"></figcaption>
                 <h1 class="masthead-heading mb-0">BSc Information and Knowledge Systems</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -292,7 +294,7 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/image.svg" alt="New Image"/>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/" alt="New Image"/>
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-5">New Image Description</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -386,11 +388,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        
         <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
+      
+       
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/api.js"></script>
+        
     </body>
 </html>
