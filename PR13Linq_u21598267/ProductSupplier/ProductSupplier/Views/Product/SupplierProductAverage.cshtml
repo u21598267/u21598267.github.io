@@ -1,0 +1,40 @@
+﻿@model ProductSupplier.Models.SupplierVM
+
+@{
+    ViewBag.Title = "SupplierProductAverages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .auto-style {
+        color: #FFFFFF;
+    }
+
+    .t {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<h2>Supplier Average Prices</h2>
+
+<div style="height: 250px; overflow: auto;">
+    <table class="table table-condensed table-hover" ">
+        <thead style="position: sticky;top: 0">
+            <tr bgcolor="#222222" class="auto-style">
+                <th width="33%">Supplier ID</th>
+                <th width="33%">Supplier Name</th>
+                <th width="33%">Average Prices</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var supplier in Model.Suppliers)
+                {
+            <tr>
+                <td>@supplier.SupplierID</td>
+                <td>@supplier.Name</td>
+
+                <td>@Math.Round(Model.ProdSuppliers.Where(x => x.SupplierID == supplier.SupplierID).Average(x => x.Price), 2)</td>
+            </tr>
+                }
+        </tbody>
+    </table>
+</div>
